@@ -1,6 +1,6 @@
 # Default ignored files
-.idea/
-.vscode/
+.idea
+.vscode
 target/
 *.iml
 .classpath
