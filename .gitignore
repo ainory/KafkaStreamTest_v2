@@ -1,0 +1,12 @@
+# Default ignored files
+.idea/
+.vscode/
+target/
+*.iml
+.classpath
+.project
+.settings/
+logs/
+test/
+.metadata/
+.recommenders/
