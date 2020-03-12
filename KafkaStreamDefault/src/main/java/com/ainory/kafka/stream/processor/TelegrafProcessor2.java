@@ -1,7 +1,7 @@
 package com.ainory.kafka.stream.processor;
 
-import com.ainory.kafka.stream.java.model.CountInfo;
-import com.ainory.kafka.stream.java.model.TelegrafInfo;
+import com.ainory.kafka.stream.model.CountInfo;
+import com.ainory.kafka.stream.model.TelegrafInfo;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import java.util.ArrayList;
 import org.apache.commons.lang3.StringUtils;

@@ -1,6 +1,6 @@
 package com.ainory.kafka.stream.timestamp.extractor;
 
-import com.ainory.kafka.stream.java.model.TelegrafInfo;
+import com.ainory.kafka.stream.model.TelegrafInfo;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.apache.kafka.clients.consumer.ConsumerRecord;
 import org.apache.kafka.streams.processor.TimestampExtractor;

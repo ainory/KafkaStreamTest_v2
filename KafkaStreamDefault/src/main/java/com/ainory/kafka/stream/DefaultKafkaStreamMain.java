@@ -1,12 +1,12 @@
 package com.ainory.kafka.stream;
 
 
-import com.ainory.kafka.stream.java.model.CountInfo;
+import com.ainory.kafka.stream.model.CountInfo;
 import com.ainory.kafka.stream.processor.TelegrafProcessorSupplier;
-import com.ainory.kafka.stream.java.serializer.CountDeserializer;
-import com.ainory.kafka.stream.java.serializer.CountSerializer;
-import com.ainory.kafka.stream.java.serializer.TelegrafDeserializer;
-import com.ainory.kafka.stream.java.serializer.TelegrafSerializer;
+import com.ainory.kafka.stream.serializer.CountDeserializer;
+import com.ainory.kafka.stream.serializer.CountSerializer;
+import com.ainory.kafka.stream.serializer.TelegrafDeserializer;
+import com.ainory.kafka.stream.serializer.TelegrafSerializer;
 import com.ainory.kafka.stream.timestamp.extractor.TelegrafTimestampExtractor;
 import java.util.Properties;
 import org.apache.commons.lang3.exception.ExceptionUtils;
