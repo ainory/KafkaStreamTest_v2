@@ -13,6 +13,9 @@ test/
 .gradle
 /build/
 
+*.class
+libs/
+
 # Ignore Gradle GUI config
 gradle-app.setting
 
