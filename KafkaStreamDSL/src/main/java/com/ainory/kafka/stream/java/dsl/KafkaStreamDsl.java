@@ -3,6 +3,7 @@ package com.ainory.kafka.stream.java.dsl;
 import com.ainory.kafka.stream.java.extractor.TelegrafTimestampExtractor;
 import com.ainory.kafka.stream.java.mapper.TelegrafKeyValueMapper;
 import com.ainory.kafka.stream.java.model.TelegrafInfo;
+import java.nio.file.Files;
 import java.util.Calendar;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
@@ -18,6 +19,7 @@ import org.apache.kafka.streams.kstream.KeyValueMapper;
 import org.apache.kafka.streams.kstream.TimeWindows;
 import org.apache.kafka.streams.kstream.Windowed;
 
+
 public class KafkaStreamDsl {
 
   public void streamDsl() {
@@ -31,8 +33,10 @@ public class KafkaStreamDsl {
       props.put(StreamsConfig.DEFAULT_VALUE_SERDE_CLASS_CONFIG, Serdes.String().getClass());
       props.put(StreamsConfig.DEFAULT_TIMESTAMP_EXTRACTOR_CLASS_CONFIG,
           TelegrafTimestampExtractor.class);
-      props.put(StreamsConfig.STATE_DIR_CONFIG,
-          "/Users/leedongju/Desktop/Dev/Source/Git/KafkaStreamTest_v2/KafkaStreamDSL/state");
+//      props.put(StreamsConfig.STATE_DIR_CONFIG,
+//          "/Users/leedongju/Desktop/Dev/Source/Git/KafkaStreamTest_v2/KafkaStreamDSL/state");
+      props.put(StreamsConfig.STATE_DIR_CONFIG, Files.createTempDirectory("kafka-stream-test").toAbsolutePath().toString()
+          );
 
       props.put(ConsumerConfig.AUTO_OFFSET_RESET_CONFIG, "latest");
 
@@ -58,9 +62,9 @@ public class KafkaStreamDsl {
                     -> new KeyValue<>(String.valueOf(value.getTags().get("check_type")), "1"))
             // check_type grouping
             .groupByKey()
-            // period 30 seconde windowing
+            // period 30 seconds windowing
             .windowedBy(TimeWindows.of(TimeUnit.SECONDS.toMillis(30)))
-            // period 30 seconde windowing count
+            // period 30 seconds windowing count
             .count()
             .toStream()
             // output value formatting
