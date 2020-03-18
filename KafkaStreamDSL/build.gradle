@@ -37,4 +37,7 @@ dependencies {
     // https://mvnrepository.com/artifact/ch.qos.logback/logback-classic
     testCompile group: 'ch.qos.logback', name: 'logback-classic', version: '1.2.3'
 
+    // https://mvnrepository.com/artifact/org.apache.kafka/kafka-streams-test-utils
+    testCompile group: 'org.apache.kafka', name: 'kafka-streams-test-utils', version: '2.4.1'
 }
+
